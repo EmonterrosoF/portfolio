@@ -1,0 +1,34 @@
+:root {
+    --background: rgb(227, 227, 227);
+    --text: black;
+    --primary: #CC35FF;
+    --option: #f1efef;
+    --option-selected:#ffffff;
+}
+
+
+.dark {
+    --background: black;
+    --text: white;
+    --option: #1a1a1a;
+    --option-selected:#2a2929;
+}
+
+// @media (prefers-color-scheme: dark) {
+//       :root{
+//           --color: black;
+//       }
+//     }
+
+.isActive {
+    //   background-color: #CC35FF;
+    background-color: var(--primary);
+      border-radius: 3.125rem;
+      
+   }
+
+
+body {
+    background-color: var(--background)
+}
+
