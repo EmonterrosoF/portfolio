@@ -8,12 +8,11 @@ import { BsMoon, BsSun } from 'react-icons/bs'
 
 import style from './header.module.scss'
 
-import { SvgLogo } from '../Logo'
+import { SvgLogo } from '../../components/Logo'
 import { useTheme } from '../../hooks/useTheme'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
 import { HiComputerDesktop, HiOutlineLanguage } from 'react-icons/hi2'
-import { linkSync } from 'fs'
 
 const modeButtons = [
   {
@@ -27,26 +26,30 @@ const modeButtons = [
   },
 ]
 
-const navigation = [
+export const navigation = [
   {
     name: 'home',
     href: '/#home',
     id: 'Home',
+    scroll: false,
   },
   {
     name: 'projects',
     href: '/#projects',
     id: 'Projects',
+    scroll: false,
   },
   {
     name: 'skills',
     href: '/#skills',
     id: 'Skills',
+    scroll: false,
   },
   {
     name: 'contact',
     href: '/#contact',
     id: 'Contact',
+    scroll: false,
   },
 ]
 
@@ -69,18 +72,16 @@ export const Header = () => {
   }
   useOnClickOutside(refOptions, handleClickOutsideFn, refButtonOptions)
 
-  const { locales, locale, asPath } = useRouter()
+  const { locales, locale } = useRouter()
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           const id = entry.target.getAttribute('id')
-          console.log(id)
 
           const link = navigation.find((nav) => nav.name === id)
           const selected = document.querySelector(`#${link?.id}`)
-          console.log(entry)
           if (entry.isIntersecting) {
             selected?.classList.add('isActive')
           } else {
@@ -116,12 +117,12 @@ export const Header = () => {
   }
   return (
     <header className={style.header}>
-      <Link href={'/'} className={style.headerLogo}>
+      <Link href={'/#hme'} className={style.headerLogo} scroll={false}>
         <SvgLogo />
       </Link>
       <nav className={style.headerNav}>
         <ul id="listOfNavigation" className={style.headerUl}>
-          {navigation.map(({ name, href, id }) => (
+          {navigation.map(({ name, href, id, scroll }) => (
             <li key={name}>
               <Link
                 ref={path}
@@ -133,6 +134,7 @@ export const Header = () => {
                 // }
                 id={id}
                 className={style.headerLink}
+                scroll={scroll}
 
                 // onClick={() => setPath(href)}
               >
@@ -168,7 +170,7 @@ export const Header = () => {
           ref={refButtonOptions}
           onClick={() => setActive(!active)}
         >
-          {theme[value]}
+          {theme[value as keyof typeof theme]}
         </button>
         <ul
           className={
@@ -188,7 +190,7 @@ export const Header = () => {
                   setActive(!active)
                 }}
               >
-                <span>{theme[mode]}</span>
+                <span>{theme[mode as keyof typeof theme]}</span>
                 {mode}
               </li>
             )

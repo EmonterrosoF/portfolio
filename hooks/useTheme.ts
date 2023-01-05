@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 const useLocalStorage = (key: string, fallbackValue: string) => {
-  const [value, setValue] = useState(fallbackValue)
+  const [value, setValue] = useState<string>(fallbackValue)
   useEffect(() => {
     const stored = localStorage.getItem(key)
     setValue(stored ? stored : fallbackValue)

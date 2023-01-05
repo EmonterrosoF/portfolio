@@ -14,11 +14,6 @@
     --option-selected:#2a2929;
 }
 
-// @media (prefers-color-scheme: dark) {
-//       :root{
-//           --color: black;
-//       }
-//     }
 
 .isActive {
     //   background-color: #CC35FF;
@@ -32,3 +27,6 @@ body {
     background-color: var(--background)
 }
 
+html {
+    scroll-behavior:smooth;
+}
