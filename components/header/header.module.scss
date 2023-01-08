@@ -61,7 +61,6 @@
       border-radius: 10px;
       padding: 5px 10px;
       gap: 2px;
-     
      }
 
      &LinkLang:hover:not(.langSelected){
@@ -133,11 +132,7 @@
         }
     
         &Ul{
-       
-            // display: flex;
             gap: normal;
-            justify-content: space-between;
-            color: var(--text);
             width: 100%;
         }
     
@@ -147,21 +142,16 @@
          text-align: center;
         }
     
-         &Lang {
-          display: flex;
-          gap: 10px;
-          align-items: center;
-          justify-content: center;
-         }
+         // &Lang {
+         //  display: flex;
+         //  gap: 10px;
+         //  background-color: red;
+         //  align-items: center;
+         //  justify-content: center;
+         // }
     
          &LinkLang {
-          color: var(--text);
-          display: flex;
-          align-items: center;
-          letter-spacing: .0938rem;
-          border-radius: 10px;
-          padding: 5px 10px;
-          gap: 2px;
+          font-size: 14px;
          
          }
     

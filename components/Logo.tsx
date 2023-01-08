@@ -2,6 +2,7 @@ import { FC } from 'react'
 
 export const SvgLogo: FC = (props) => (
   <svg
+    className="logo"
     width={105}
     height={54}
     fill="none"

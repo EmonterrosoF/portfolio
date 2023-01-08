@@ -79,16 +79,10 @@ body {
           border-radius: 0;
           
        }
+
+       .logo {
+        transform: scale(0.8);
+       }
     
 
-  }
-
-  @media (max-width:498px){
-    .headerLink{
-      font-size: 7px;
-      letter-spacing: .0625rem;
-      font-weight: bold;
-      padding: 10px 20px;
-
-    }
   }
