@@ -1,9 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
+import { useRef, useState } from 'react'
 
 import { useRouter } from 'next/router'
 import Link from 'next/link'
 
-import { FormattedMessage } from 'react-intl'
 import { BsMoon, BsSun } from 'react-icons/bs'
 
 import style from './header.module.scss'
@@ -13,6 +12,8 @@ import { useTheme } from '../../hooks/useTheme'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
 
 import { HiComputerDesktop, HiOutlineLanguage } from 'react-icons/hi2'
+import { useObserver } from '../../hooks/useObserver'
+import Navigation from './Navigation'
 
 const modeButtons = [
   {
@@ -61,9 +62,10 @@ const theme = {
 
 export const Header = () => {
   const [active, setActive] = useState(false)
-  const { value, setValue } = useTheme()
 
-  const path = useRef<HTMLAnchorElement>(null)
+  const { value, setValue } = useTheme()
+  useObserver(navigation)
+
   const refOptions = useRef<HTMLUListElement>(null)
   const refButtonOptions = useRef<HTMLButtonElement>(null)
 
@@ -73,37 +75,6 @@ export const Header = () => {
   useOnClickOutside(refOptions, handleClickOutsideFn, refButtonOptions)
 
   const { locales, locale } = useRouter()
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.getAttribute('id')
-
-          const link = navigation.find((nav) => nav.name === id)
-          const selected = document.querySelector(`#${link?.id}`)
-          if (entry.isIntersecting) {
-            selected?.classList.add('isActive')
-          } else {
-            selected?.classList.remove('isActive')
-          }
-        })
-      },
-      { rootMargin: '-50% 0px -50% 0px' }
-    )
-
-    navigation.forEach(({ href }) => {
-      const section = document.querySelector(href.replace('/', ''))
-
-      if (section) {
-        observer.observe(section)
-      }
-    })
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
 
   if (typeof window !== 'undefined') {
     let media = window.matchMedia('(prefers-color-scheme: dark)')
@@ -121,26 +92,9 @@ export const Header = () => {
         <SvgLogo />
       </Link>
       <nav className={style.headerNav}>
-        <ul id="listOfNavigation" className={style.headerUl}>
-          {navigation.map(({ name, href, id, scroll }) => (
-            <li key={name}>
-              <Link
-                ref={path}
-                href={href}
-                // className={
-                //   path === href
-                //     ? `${style.headerLink} ${style.isActive}`
-                //     : style.headerLink
-                // }
-                id={id}
-                className={style.headerLink}
-                scroll={scroll}
-
-                // onClick={() => setPath(href)}
-              >
-                <FormattedMessage id={`header.nav.${name}`} />
-              </Link>
-            </li>
+        <ul className={style.headerUl}>
+          {navigation.map((navigation, index) => (
+            <Navigation key={index} navigation={navigation}></Navigation>
           ))}
         </ul>
       </nav>

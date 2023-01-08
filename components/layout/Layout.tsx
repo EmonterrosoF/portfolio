@@ -5,6 +5,7 @@ import Head from 'next/head'
 import style from './layout.module.scss'
 import { Header } from '../header/Header'
 import { Poppins } from '@next/font/google'
+import Footer from '../footer/Footer'
 
 interface props {
   children: ReactNode
@@ -25,6 +26,7 @@ export const Layout: FC<props> = ({ children }) => {
       <div className={`${style.container} ${poppins.className}`}>
         <Header />
         <main>{children}</main>
+        <Footer />
       </div>
     </>
   )

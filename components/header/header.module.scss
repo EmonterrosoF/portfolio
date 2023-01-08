@@ -6,48 +6,44 @@
     margin: 0 auto;
     padding: .9375rem .9375rem;
     position: sticky;
-    top: 0px;
-    backdrop-filter: blur(4px);
-    
-   //  box-shadow: 2px 15px 15px 2px rgba(0, 0, 0, 0.2);
-    
-   //  &Logo{
-   //      background-color: aqua;
-   //  }
+    top: 0;
+   //  top: 0px;
 
-    &Button{
-        // background-color: bisque;
-        display: none;
+    backdrop-filter: blur(4px);
+  
+    &Logo {
+      margin: auto 0;
+
     }
-        
     &Nav{ 
-    //    padding: .25rem 0;
-    //    background-color: palegreen;    
        margin: auto 0;
+      position: absolute;
+        top: 50%;
+        left: 50%;
+      //  background-color: aquamarine;
+       
+        transform:translate(-50%, -50%);
+       display: flex;
+       justify-content: center;
+       align-items: center; 
+       
     }
 
     &Ul{
    
         display: flex;
-        font-size: 1.25rem;
-        letter-spacing: .0938rem;
-        gap: 40px;
+        gap: 14px;
         color: var(--text);
         //  background-color: lightsteelblue;
     }
 
 
     // &Li{}
-     &Link{
-        font-size: .75rem;
-        font-weight: bold;
-        padding: .625rem 1.25rem;
-     }
-
+   
      &Right {
-      // background-color: #CC35FF;
       display: flex;
       gap: 30px;
+      margin: auto 0;
      }
 
      &Lang {
@@ -117,19 +113,106 @@
          cursor: pointer;
          background-color: var(--option-selected) ;
       }
-
-     &Link:hover:not(.isActive){
-        color: var(--primary);
-     }
-
-    
     
 }
 
 
 @media (max-width: 1000px) { 
       .header {
-         background-color: red;
+         // background-color: red;
+         backdrop-filter: none;
+            
+        &Nav{ 
+          background-color: var(--option);
+         position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: auto;     
+        transform: none;
+        }
+    
+        &Ul{
+       
+            // display: flex;
+            gap: normal;
+            justify-content: space-between;
+            color: var(--text);
+            width: 100%;
+        }
+    
+    
+        &Li{
+         width: 100%;
+         text-align: center;
+        }
+    
+         &Lang {
+          display: flex;
+          gap: 10px;
+          align-items: center;
+          justify-content: center;
+         }
+    
+         &LinkLang {
+          color: var(--text);
+          display: flex;
+          align-items: center;
+          letter-spacing: .0938rem;
+          border-radius: 10px;
+          padding: 5px 10px;
+          gap: 2px;
+         
+         }
+    
+         &LinkLang:hover:not(.langSelected){
+          color: var(--primary);
+       }
+    
+         .langSelected {
+                border: 2px solid var(--primary);
+    
+         }
+    
+          &ButtonTheme{
+                color: var(--text);
+                margin-right: 10px;
+                padding: 0px 5px;
+                height: 30px;
+                cursor: pointer;
+                margin: auto 0;
+          }
+    
+          &ButtonTheme:hover {
+             color: var(--primary);
+          }
+    
+          &UlTheme{
+             display: none;
+             color: var(--text);
+             background-color: var(--option);
+             right: 0px;
+             bottom: -95px;
+             position: absolute;
+             border-radius: 10px;
+             overflow: hidden;
+          }
+    
+          .ulThemeActive{
+             display: block;
+          }
+    
+          &LiLeft{
+             display: flex;
+             gap: 3px;
+             align-items: center;
+             padding: 5px 20px 5px 8px;
+         
+          }
+    
+          &LiLeft:hover {
+             cursor: pointer;
+             background-color: var(--option-selected) ;
+          }
       }
 }
-
