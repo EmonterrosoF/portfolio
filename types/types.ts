@@ -3,4 +3,5 @@ export interface nav {
   href: string
   id: string
   scroll: boolean
+  icon: React.ReactNode
 }

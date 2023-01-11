@@ -4,14 +4,17 @@ import { nav } from '../../types/types'
 import style from './header.module.scss'
 
 const Navigation = ({
-  navigation: { id, href, name, scroll },
+  navigation: { id, href, name, scroll, icon },
 }: {
   navigation: nav
 }) => {
   return (
     <li className={style.headerLi}>
-      <Link href={href} id={id} className="headerLink" scroll={scroll}>
-        <FormattedMessage id={`header.nav.${name}`} />
+      <Link href={href} id={id} className="Link" scroll={scroll}>
+        <span className={style.letter}>
+          <FormattedMessage id={`header.nav.${name}`} />
+        </span>
+        {icon}
       </Link>
     </li>
   )

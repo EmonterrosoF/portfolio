@@ -1,18 +1,223 @@
 .section {
-    // background-color: red;
-    height: 1000px;
+    //  background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 15px;
+    &Left{
+        width: 50%;
+    //  background-color: blueviolet;
+   
+    }
+    
+    &P{
+        //   background-color: brown;
+        color: var(--text);
+        //  font-size: 5.7vw ;
+         font-size: 6.7vw ;
+         font-weight: 600;
+        // letter-spacing: 10px;
+        // margin-bottom: -20px;
+        
+    }   
+    
+    &H1{
+        margin-top: -20px;
+        // background-color: chartreuse;
+        color: var(--primary);
+        font-weight: 500;
+        font-size: 2.6vw;
+        // letter-spacing: 3px;
+        // background-color: red;
+        // margin-top: -25px;
+        // padding-bottom: 40px;
+        //  padding-left: 1px;
+        margin-bottom: 20px;
+    }
+    
+    &Div{
+         // background-color: cadetblue;
+        display: flex;
+        width: 370px;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 0 20px 3px ;
+    }
+    
+    &CV{
+        background-color: var(--primary);
+        color: #ffffff;
+        font-size: 15px;
+        letter-spacing: 1.5008px;
+        font-weight: bold;
+        padding: 15px 20px;
+        border-radius: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
 
-// &Left{
+    }
+    
+    &Contact{
+       border: solid 1px var(--text);;
+       color: var(--text);
+       font-size: 15px;
+       letter-spacing: 1.5008px;
+       font-weight: bold;
+       padding: 15px 20px;
+       border-radius: 50px;
+       display: flex;
+       align-items: center;
+       justify-content: space-between;
+       gap: 8px;
 
-// }
-// &P
-// &H1{
+    }
 
-// }
-// &Div{
+    &Right {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        // height: 100px;
+        width: 50%;
+        overflow: hidden;
+        padding: 100px 0;
+        //  background-color: red;
+        // margin-left: 500px;
+        //   background-color: red;
+        // background-color: black;
+        // border: solid 1px var(--text);
+        position: relative;
 
-// }
-// &ight{
+       
+    }
 
-// }
 }
+
+
+@media (max-width: 1000px) { 
+    .section {
+        display: block;
+
+        &Left {
+            margin: 0 auto;
+            text-align: center;
+            padding: 70px 0 20px 0;
+            // background-color: aqua;
+            width: 100%;
+            
+        }
+
+        &P {
+            font-size: 65px;
+            // background-color: red;
+            
+        }
+
+        &H1 {
+            padding: 10px 0 5px 0 ;
+            font-size: 25px;
+        }
+
+        &Div {
+            margin: 0 auto;
+        }
+
+        &Right {
+            margin: 0 auto;
+            padding: 0;
+            width: 85%;
+        }
+    }
+
+  
+}
+
+.circle {
+   
+        // background-color: red;
+        position: absolute;
+   
+    
+}
+// this is for the font not is large
+@media (min-width: 1585px) {
+    .section {
+        &P {
+            font-size: 105px;
+        }
+
+        &H1{
+            font-size: 40px;
+        }
+    }  
+  }
+
+  @media (max-width: 562px) {
+    .section {
+        &P {
+            font-size: 46px;   
+        }
+
+        &H1{
+            font-size: 20px;
+            // background-color: red;
+        }
+
+        &CV{
+            font-size: 10px;
+           padding: 12px 15px;
+           gap: 5px
+        }
+
+        &Div{
+            margin-top: -20px;
+            //  background-color: cadetblue;
+           width: 270px;
+       }
+        
+        &Contact{
+           
+           font-size: 10px;
+           padding: 12px 15px;
+         
+           gap: 5px;
+    
+        }
+    }
+
+  }
+
+
+  @media (max-width: 357px) {
+
+    .section {
+        &P {
+            font-size: 30px;
+        }
+
+        &H1{
+            font-size: 15px;
+        }
+        
+        &Div{
+            // background-color: cadetblue;
+           width: 190px;
+
+       }
+
+        &CV{
+            font-size: 7px;
+           padding: 10px 10px;
+           gap: 4px
+        }
+        
+        &Contact{
+           
+            font-size: 7px;
+            padding: 10px 10px;
+            gap: 4px
+        }
+    }
+
+  }

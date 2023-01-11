@@ -4,15 +4,18 @@ import { useRouter } from 'next/router'
 import Link from 'next/link'
 
 import { BsMoon, BsSun } from 'react-icons/bs'
+import { AiFillHome, AiOutlineFundProjectionScreen } from 'react-icons/ai'
+import { HiComputerDesktop, HiOutlineLanguage } from 'react-icons/hi2'
+import { GiSkills } from 'react-icons/gi'
+import { IoIosContact } from 'react-icons/io'
 
 import style from './header.module.scss'
 
 import { SvgLogo } from '../../components/Logo'
 import { useTheme } from '../../hooks/useTheme'
 import useOnClickOutside from '../../hooks/useOnClickOutside'
-
-import { HiComputerDesktop, HiOutlineLanguage } from 'react-icons/hi2'
 import { useObserver } from '../../hooks/useObserver'
+
 import Navigation from './Navigation'
 
 const modeButtons = [
@@ -33,24 +36,28 @@ export const navigation = [
     href: '/#home',
     id: 'Home',
     scroll: false,
+    icon: <AiFillHome className={style.icon} />,
   },
   {
     name: 'projects',
     href: '/#projects',
     id: 'Projects',
     scroll: false,
+    icon: <AiOutlineFundProjectionScreen className={style.icon} />,
   },
   {
     name: 'skills',
     href: '/#skills',
     id: 'Skills',
     scroll: false,
+    icon: <GiSkills className={style.icon} />,
   },
   {
     name: 'contact',
     href: '/#contact',
     id: 'Contact',
     scroll: false,
+    icon: <IoIosContact className={style.icon} />,
   },
 ]
 
@@ -71,6 +78,10 @@ export const Header = () => {
 
   const handleClickOutsideFn = () => {
     setActive(false)
+    const main = document.querySelector('main') || undefined
+    if (main !== undefined) {
+      main.style.filter = 'none'
+    }
   }
   useOnClickOutside(refOptions, handleClickOutsideFn, refButtonOptions)
 
@@ -111,7 +122,13 @@ export const Header = () => {
               href="/"
               locale={local}
             >
-              <span>
+              <span
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
                 <HiOutlineLanguage />
               </span>
               {local}
@@ -122,7 +139,15 @@ export const Header = () => {
         <button
           className={style.headerButtonTheme}
           ref={refButtonOptions}
-          onClick={() => setActive(!active)}
+          onClick={() => {
+            setActive(!active)
+            const main = document.querySelector('main') || undefined
+            if (main?.style.filter.includes('blur(8px)')) {
+              main.style.filter = 'none'
+            } else if (main !== undefined) {
+              main.style.filter = 'blur(8px)'
+            }
+          }}
         >
           {theme[value as keyof typeof theme]}
         </button>
@@ -142,6 +167,10 @@ export const Header = () => {
                 onClick={(e) => {
                   setValue(mode)
                   setActive(!active)
+                  const main = document.querySelector('main') || undefined
+                  if (main !== undefined) {
+                    main.style.filter = 'none'
+                  }
                 }}
               >
                 <span>{theme[mode as keyof typeof theme]}</span>
