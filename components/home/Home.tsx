@@ -1,5 +1,7 @@
 import Link from 'next/link'
 
+import { FormattedMessage } from 'react-intl'
+
 import { HiDownload } from 'react-icons/hi'
 import { AiFillPhone } from 'react-icons/ai'
 
@@ -11,7 +13,9 @@ export const Home = () => {
       <div className={style.sectionLeft}>
         <p className={style.sectionP}>EDRAS</p>
         <p className={style.sectionP}>MONTERROSO</p>
-        <h1 className={style.sectionH1}>Soy Web Development</h1>
+        <h1 className={style.sectionH1}>
+          <FormattedMessage id="home.subtitle" />
+        </h1>
         <div className={style.sectionDiv}>
           <Link className={`Link ${style.sectionCV}`} href="#">
             <span
@@ -23,7 +27,7 @@ export const Home = () => {
             >
               <HiDownload />
             </span>
-            Descargar CV
+            <FormattedMessage id="home.download" />
           </Link>
           <Link className={`Link ${style.sectionContact}`} href="#">
             <span
@@ -35,7 +39,7 @@ export const Home = () => {
             >
               <AiFillPhone />
             </span>
-            Contacto
+            <FormattedMessage id="home.contact" />
           </Link>
         </div>
       </div>

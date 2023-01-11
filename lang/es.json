@@ -2,5 +2,9 @@
   "header.nav.home": "Inicio",
   "header.nav.projects": "Proyectos",
   "header.nav.skills": "Habilidades",
-  "header.nav.contact": "Contacto"
+  "header.nav.contact": "Contacto",
+
+  "home.subtitle": "Soy Desarrollador Web",
+  "home.download": "Descargar CV",
+  "home.contact": "Contacto"
 }

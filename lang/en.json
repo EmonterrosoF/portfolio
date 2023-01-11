@@ -2,5 +2,9 @@
   "header.nav.home": "Home",
   "header.nav.projects": "Projects",
   "header.nav.skills": "Skills",
-  "header.nav.contact": "Contact"
+  "header.nav.contact": "Contact",
+
+  "home.subtitle": "I'm a web developer",
+  "home.download": "Download CV",
+  "home.contact": "Contact"
 }
