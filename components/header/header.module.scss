@@ -3,10 +3,11 @@
     justify-content: space-between;
     max-width: 96rem;
     margin: 0 auto;
-    padding: .9375rem .9375rem;
+    padding: .9375rem .375rem .9375rem 1.1875rem;
     top: 0;
     position: sticky;
-    z-index: 1;
+    z-index: 2;
+
    //  z-index: 1;
    //  background-color: rgba(0, 0, 0, 0.343);
 
@@ -161,7 +162,7 @@
         }
       
           &UlTheme{
-             bottom: -104.5px;
+             bottom: -104.5008px;
           }
     
     
@@ -191,6 +192,15 @@
 
 
 @media (max-width: 357px){
+
+   .headerLogo {
+      margin: auto 0;
+      // background-color: aqua;
+      transform: scale(.7);
+
+    }
+
+
    .header {
       padding:0 10px 0  0px;
 

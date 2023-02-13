@@ -1,10 +1,31 @@
 {
-  "header.nav.home": "Home",
+  "header.nav.principal": "Home",
   "header.nav.projects": "Projects",
   "header.nav.skills": "Skills",
   "header.nav.contact": "Contact",
 
   "home.subtitle": "I'm a web developer",
+
   "home.download": "Download CV",
-  "home.contact": "Contact"
+  "home.contact": "Contact",
+
+  "home.description1": "I build stuff for the web. I'm a software engineer",
+  "home.description2": "specializing in building (and occasionally designing",
+  "home.description3": "exceptional digital experiences).",
+  "home.description4": "I am currently focused on building accessible",
+  "home.description5": "products for everyone.",
+
+  "project.title": "Projects",
+
+  "project.pdftools-title": "pdftools",
+  "project.pdftools-description": "PDF tool to convert documents",
+  "project.pdftools-psdata": "it takes a while to load the first time by the server since it's free",
+
+  "project.shortlink-title": "short-link",
+  "project.shortlink-description": "Tool to cut your links",
+
+  "skill.title": "Skills",
+
+  "contact.title": "Contact",
+  "contact.send": "Send"
 }

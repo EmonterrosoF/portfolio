@@ -1,10 +1,31 @@
 {
-  "header.nav.home": "Inicio",
+  "header.nav.principal": "Inicio",
   "header.nav.projects": "Proyectos",
   "header.nav.skills": "Habilidades",
   "header.nav.contact": "Contacto",
 
   "home.subtitle": "Soy Desarrollador Web",
+
   "home.download": "Descargar CV",
-  "home.contact": "Contacto"
+  "home.contact": "Contacto",
+
+  "home.description1": "Construyo cosas para la web. Soy ingeniero de software",
+  "home.description2": "especializado en la construcción (y ocasionalmente en el diseño",
+  "home.description3": "de experiencias digitales excepcionales).",
+  "home.description4": "Actualmente estoy enfocado en construir productos accesibles",
+  "home.description5": "para todo el mundo",
+
+  "project.title": "Proyectos",
+
+  "project.pdftools-title": "pdftools",
+  "project.pdftools-description": "Herramienta PDF para convertir documentos",
+  "project.pdftools-psdata": "tarda un poco en cargar la primera vez por el servidor ya que es gratis",
+
+  "project.shortlink-title": "short-link",
+  "project.shortlink-description": "Herramienta para acortar tus links",
+
+  "skill.title": "Habilidades",
+
+  "contact.title": "Contacto",
+  "contact.send": "Enviar"
 }

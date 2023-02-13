@@ -1,10 +1,22 @@
 :root {
-    --background: rgb(227, 227, 227);
+    --background:#cececeb7;
     --text: black;
     --primary: #CC35FF;
-    --option: #f1efef;
+    --option: #ececec;
     --option-selected:#ffffff;
+    --text-secundary: rgba(72, 67, 67, 0.777);
+    --fill-wave: #dcd9d9;
+
+
+    ////////////////////////////////////////////////////////////////
+  
+    --translate: 0px;
+    --animation: none;
+    --with-item: 700px;
+    --gap: 50px;
+    --translate-card: none;
 }
+
 
 
 .dark {
@@ -12,8 +24,69 @@
     --text: white;
     --option: #1a1a1a;
     --option-selected:#2a2929;
+    --text-secundary: rgba(153, 150, 150, 0.73);
+    --fill-wave: black;
        
 }
+
+
+@media (max-width: 706px) { 
+    :root {
+      --with-item: 600px;
+      --gap: 150px;
+
+    }
+}
+
+@media (max-width: 604px) {
+
+  :root {
+    --with-item: 500px;
+    --gap: 250px;
+
+  }
+    
+}
+
+@media (max-width: 508px) {
+
+  :root {
+    --with-item: 400px;
+    --gap: 348px
+
+}
+    
+}
+
+@media (max-width: 406px) {
+
+  :root {
+    --with-item: 300px;
+    --gap: 450px
+
+  }
+    
+}
+
+@media (max-width: 300px) {
+
+  :root {
+    --with-item: 250px;
+    --gap: 500px
+
+  }
+    
+}
+
+// @media (max-width: 399px) {
+
+//   :root {
+//     --with-item: 200px;
+//     --gap: 150px;
+
+//   }
+    
+// }
 
 .Link{
   font-size: 12px;
@@ -23,21 +96,38 @@
   border-radius: 50px;
 }
 
-.headerLink:hover:not(.isActive){
-  color: var(--primary);
+.Link:hover:not(.isActive){
+  color: transparent;
+  background: linear-gradient(90deg,#CC35FF 2.34%,#4ca5ff 100.78%);
+  background-clip: text;
 }
 
 .isActive {
     //   background-color: #CC35FF;
-    background-color: var(--primary);
-     
+    background: linear-gradient(90deg,#CC35FF 2.34%,#4ca5ff 100.78%);
+
       
    }
 
 
 body {
-    background-color: var(--background);
+  background: var(--background);
+  position: relative;
 }
+
+.wave {
+  fill: var(--fill-wave);
+}
+
+
+.banner {
+  background-attachment: fixed;
+  width: max-content;
+  transform: scale(2);
+  opacity: .1;
+}
+
+
 
 
 /* width */
@@ -90,13 +180,37 @@ body {
   }
 
 
-  .floating-icons {
-    //  background-color: #CC35FF;
-    // width: auto;
-    // width: 100%;
-    height: auto;
 
+  .bot {
+    // background-color: #4ca5ff;
+    // position: absolute;
+    z-index: 1;
+   
+    position: absolute;
+    top: 40px;
+    right: -90px;
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0% {
  
+      transform: translatey(0px);
+    }
+    50% {
+
+      transform: translatey(75px);
+    }
+    100% {
+
+      transform: translatey(0px);
+    }
+  }
+
+
+  .floating-icons {
+
+
     animation: rotation 30s infinite linear;
 
 
@@ -111,3 +225,5 @@ body {
     }
   }
 
+
+ 

@@ -87,8 +87,8 @@
   
   /* (Opcional) Configuramos el texto que seleccionamos */
   ::selection {
-    background-color: var(--negro);
-    color: var(--blanco);
+     background: var(--primary);
+     color: var(--text);
   }
   
   /* Nivelamos problemas de tipografías y colocación de formularios */

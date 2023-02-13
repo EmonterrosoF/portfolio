@@ -13,7 +13,9 @@ export const useObserver = (nav: nav[]) => {
           const id = entry.target.getAttribute('id')
 
           const link = navigation.find((nav) => nav.name === id)
+
           const selected = document.querySelector(`#${link?.id}`)
+
           if (entry.isIntersecting) {
             selected?.classList.add('isActive')
           } else {
@@ -25,7 +27,12 @@ export const useObserver = (nav: nav[]) => {
     )
 
     navigation?.forEach(({ href }: { href: nav['href'] }) => {
-      const section = document.querySelector(href?.replace('/', ''))
+      let section = null
+      if (href?.replace('/', '') === '#home') {
+        section = document.querySelector('#principal')
+      } else {
+        section = document.querySelector(href?.replace('/', ''))
+      }
 
       if (section) {
         observer.observe(section)
