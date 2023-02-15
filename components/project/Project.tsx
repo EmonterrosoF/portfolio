@@ -439,6 +439,7 @@ export const Project = () => {
           </svg>
           {/* ///////////////////////// */}
           <svg
+            className={style.cardIcon}
             xmlns="http://www.w3.org/2000/svg"
             width="50"
             height="50"
@@ -482,6 +483,7 @@ export const Project = () => {
           </svg>
           {/* //////////////////// */}
           <svg
+            className={style.cardIcon}
             xmlns="http://www.w3.org/2000/svg"
             width="41"
             height="13"
@@ -494,6 +496,7 @@ export const Project = () => {
           </svg>
           {/* ///////////////////////////// */}
           <svg
+            className={style.cardIcon}
             xmlns="http://www.w3.org/2000/svg"
             width="66"
             height="13"
@@ -506,6 +509,7 @@ export const Project = () => {
           </svg>
           {/* ////////////////////////// */}
           <svg
+            className={style.cardIcon}
             xmlns="http://www.w3.org/2000/svg"
             width="50"
             height="50"

@@ -57,11 +57,24 @@ export const Contact = () => {
       .then(
         function (response) {
           console.log('SUCCESS!', response.status, response.text)
+          return toast.success('Thanks you, for contact me', {
+            // duration: 3,
+            position: 'top-right',
+            icon: '👍',
+          })
         },
         function (error) {
-          console.log('FAILED...', error)
+          return toast.error('Ocurrer an error', {
+            // duration: 3,
+            position: 'top-right',
+          })
         }
       )
+
+    input.user_name.value = ''
+    input.user_email.value = ''
+    input.user_phone.value = ''
+    input.message.value = ''
   }
 
   return (

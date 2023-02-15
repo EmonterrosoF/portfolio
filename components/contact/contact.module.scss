@@ -20,6 +20,7 @@
         align-items: center;
         justify-content: center;
         box-shadow: #000000 1px 4px 46px 1px;
+        background: #ffffff30;
     }
 
     &Form {
@@ -30,9 +31,12 @@
         margin: 20px 0;
         width: 100%;
         padding: 20px;
-        border-radius: 10px;
-
+        border-radius: 10px; 
         background-color: azure;
+    }
+
+    &Input:focus{
+        outline-color: #CC35FF;
     }
 
     &Botton {
